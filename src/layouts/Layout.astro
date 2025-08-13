@@ -1,22 +1,56 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta
+			name="description"
+			content="Mannwork tus servicios del hogar, en un solo lugar"
+		/>
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		<link rel="icon" type="image/x-icon" href="/mannwork.ico" />
+		<title>Mannwork - Tus servicios del hogar</title>
 	</head>
 	<body>
-		<slot />
+		<Header />
+		<main class="min-h-screen">
+			<slot />
+		</main>
+		<Footer />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', () => {
+				if (typeof AOS !== 'undefined') {
+					AOS.init({
+						duration: 800,
+						once: true,
+						offset: 100,
+						startEvent: 'load'
+					});
+				}
+			});
+		</script>
 	</body>
 </html>
 
-<style>
-	html,
+<style is:global>
 	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+		background: linear-gradient(
+			1000deg,
+			#2d7a3e 25%,
+			#3a9b51 50%,
+			#4cbd68 100%
+		);
 	}
 </style>

@@ -1,0 +1,116 @@
+---
+// Importar imágenes (asegúrate de tener estas imágenes en tu carpeta public)
+const appScreenshot = "/images/app-screenshot.png";
+const appStoreBadge = "/images/app-store-badge.svg";
+const playStoreBadge = "/images/play-store-badge.svg";
+---
+
+<section
+    class="relative py-16 max-w-[1440px] mx-auto overflow-hidden"
+    data-aos="fade-up"
+    data-aos-duration="800"
+>
+    <div class="px-4 sm:px-6">
+        <div
+            class="grid grid-cols-1 place-items-center xl:place-items-start xl:grid-cols-2"
+        >
+            <!-- Columna de texto con avatares -->
+            <div class="flex items-center">
+                <!-- Avatares superpuestos con animaciones -->
+                <div class="flex">
+                    <div
+                        class="w-20 h-20 border-2 border-white rounded-full bg-secondary overflow-hidden transform transition-all duration-500 hover:scale-110 hover:z-10 hover:shadow-lg hover:-translate-y-2"
+                        data-aos="fade-right"
+                        data-aos-delay="100"
+                        data-aos-duration="600"
+                    >
+                        <img
+                            src="src/assets/person-1.svg"
+                            alt="Usuario 1"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                        />
+                    </div>
+                    <div
+                        class="-ml-4 w-20 h-20 border-2 border-white rounded-full bg-secondary overflow-hidden transform transition-all duration-500 hover:scale-110 hover:z-10 hover:shadow-lg hover:-translate-y-2"
+                        data-aos="fade-right"
+                        data-aos-delay="200"
+                        data-aos-duration="600"
+                    >
+                        <img
+                            src="src/assets/person-2.svg"
+                            alt="Usuario 2"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                        />
+                    </div>
+                    <div
+                        class="-ml-4 w-20 h-20 border-2 border-white rounded-full bg-secondary overflow-hidden transform transition-all duration-500 hover:scale-110 hover:z-10 hover:shadow-lg hover:-translate-y-2"
+                        data-aos="fade-right"
+                        data-aos-delay="300"
+                        data-aos-duration="600"
+                    >
+                        <img
+                            src="src/assets/person-3.svg"
+                            alt="Usuario 3"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                        />
+                    </div>
+                </div>
+                <h1
+                    class="mx-8 text-xl text-nowrap font-bold text-secondary"
+                    data-aos="fade-left"
+                    data-aos-delay="400"
+                    data-aos-duration="600"
+                >
+                    Unite a cientos de clientes y profesionales totalmente
+                    <span class="text-secondary">¡GRATIS!</span>
+                </h1>
+            </div>
+
+            <!-- Columna de contenido -->
+            <div class="mt-10 xl:mt-0 xl:justify-self-end">
+                <div
+                    class="flex flex-col sm:flex-row gap-14 xl:gap-4 justify-center"
+                >
+                    <a
+                        href="#"
+                        class="inline-flex max-w-[250px] max-h-[100px] items-center transform transition-all duration-500 hover:scale-105 hover:drop-shadow-lg"
+                        data-aos="zoom-in"
+                        data-aos-delay="500"
+                        data-aos-duration="700"
+                    >
+                        <div class="relative group">
+                            <img
+                                src="src/assets/app-store.svg"
+                                alt="Descargar en App Store"
+                                class="min-w-[250px] min-h-[100px] w-auto transition-all duration-500 group-hover:scale-100"
+                            />
+                            <div
+                                class="absolute -inset-1 bg-primary/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </a>
+                    <a
+                        href="#"
+                        class="inline-flex max-w-[250px] max-h-[100px] items-center transform transition-all duration-500 hover:scale-100 hover:drop-shadow-lg"
+                        data-aos="zoom-in"
+                        data-aos-delay="600"
+                        data-aos-duration="700"
+                    >
+                        <div class="relative group">
+                            <img
+                                src="src/assets/play-store.svg"
+                                alt="Disponible en Google Play"
+                                class="min-h-[200px] min-w-[200px] w-auto transition-all duration-500 group-hover:scale-100"
+                            />
+                            <div
+                                class="absolute -inset-1 bg-primary/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

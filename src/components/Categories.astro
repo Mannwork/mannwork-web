@@ -1,0 +1,68 @@
+---
+const categoryIcons: Record<string, string> = {
+    "A/A": "ac_unit",
+    Albañil: "construction",
+    Arquitecto: "architecture",
+    Autos: "directions_car",
+    Belleza: "spa",
+    Bienestar: "self_improvement",
+    Carpintero: "carpenter",
+    Cerrajero: "vpn_key",
+    Colocador: "handyman",
+    "Control de plagas": "bug_report",
+    Cuidadores: "face",
+    Decorador: "style",
+    Electricista: "electrical_services",
+    Eventos: "celebration",
+    Gasista: "local_fire_department",
+    Herrero: "hardware",
+    Jardinero: "yard",
+    Limpieza: "cleaning_services",
+    Mascotas: "pets",
+    Mudancero: "local_shipping",
+    Piletas: "pool",
+    Pintor: "format_paint",
+    Plomero: "plumbing",
+    Reformas: "home_repair_service",
+    Seguridad: "security",
+    Tapicero: "weekend",
+    Técnico: "build",
+};
+
+// Convertir el objeto a un array para mapear
+const categories = Object.entries(categoryIcons).map(([name, icon]) => ({
+    name,
+    icon,
+}));
+---
+
+<section
+    class="py-8 bg-[#e3f5e9] 2xl:rounded-xl px-4 sm:px-6 lg:px-10 max-w-[1440px] mx-auto"
+    data-aos="fade-up"
+>
+    <h2 class="text-3xl font-bold text-center text-primary mb-12">
+        Nuestras Categorías
+    </h2>
+
+    <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6"
+    >
+        {
+            categories.map((category, index) => (
+                <span 
+                    class="flex flex-col items-center justify-center p-6 bg-primary rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:bg-primary/80 border-[2px] border-black/20 transform hover:-translate-y-1"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                    data-aos-easing="ease-out-cubic"
+                >
+                    <span class="material-icons text-5xl text-secondary mb-3">
+                        {category.icon}
+                    </span>
+                    <span class="text-lg font-medium text-secondary text-center">
+                        {category.name}
+                    </span>
+                </span>
+            ))
+        }
+    </div>
+</section>
