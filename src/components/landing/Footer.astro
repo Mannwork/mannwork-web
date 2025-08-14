@@ -1,0 +1,167 @@
+<footer class="max-w-[1440px] mx-auto text-white pb-6 relative">
+    <!-- Botón Volver arriba -->
+    <button
+        id="back-to-top"
+        aria-label="Volver arriba"
+        class="fixed bottom-6 right-6 bg-secondary text-white p-4 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 opacity-0 invisible focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary flex items-center justify-center"
+    >
+        <span class="material-icons text-primary"> arrow_upward </span>
+    </button>
+
+    <div class="container mx-auto px-4 max-w-7xl">
+        <!-- Contenido principal -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Logo -->
+            <div class="pt-12 flex flex-col">
+                <div class="mb-4 -mt-12">
+                    <img
+                        src="/src/assets/logo_blanco.png"
+                        alt="Logo"
+                        class="w-32 h-32"
+                    />
+                </div>
+                <p class="text-secondary text-sm mb-4">
+                    Conectamos profesionales calificados con clientes que
+                    necesitan sus servicios de manera rápida y confiable.
+                </p>
+            </div>
+
+            <!-- Contáctanos + Información -->
+            <div class="md:pt-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-26">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-4">
+                            Contáctanos
+                        </h3>
+                        <ul class="space-y-3 text-gray-300 text-sm">
+                            <li class="flex items-start">
+                                <span class="material-icons text-secondary mr-2"
+                                    >email</span
+                                >
+                                <a
+                                    href="mailto:info@mannwork.com"
+                                    class="hover:text-primary transition-colors"
+                                    >mannworkofficial@gmail.com</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-4">
+                            Información
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a
+                                    href="/legal/faq"
+                                    class="text-gray-300 hover:text-primary transition-colors text-sm block py-1"
+                                    >Preguntas Frecuentes</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/legal/terms"
+                                    class="text-gray-300 text-nowrap hover:text-primary transition-colors text-sm block py-1"
+                                    >Términos y Condiciones</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="/legal/privacy"
+                                    class="text-gray-300 hover:text-primary transition-colors text-sm block py-1"
+                                    >Política de Privacidad</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Redes sociales (ahora a la derecha) -->
+            <div class="pt-12 col-span-1 md:col-span-2 lg:col-span-1">
+                <div
+                    class="flex justify-center w-full justify-center lg:justify-end space-x-4"
+                >
+                    <!-- Facebook -->
+                    <a
+                        href="#"
+                        class="text-secondary hover:text-primary transition-colors"
+                        aria-label="Facebook"
+                    >
+                        <img
+                            src="/src/assets/socials-media/facebook.svg"
+                            alt="Facebook"
+                            class="h-8 w-8"
+                        />
+                    </a>
+                    <!-- Instagram -->
+                    <a
+                        href="https://www.instagram.com/mannworkofficial"
+                        class="text-gray-300 hover:text-primary transition-colors"
+                        aria-label="Instagram"
+                    >
+                        <img
+                            src="/src/assets/socials-media/instagram.svg"
+                            alt="Instagram"
+                            class="h-8 w-8"
+                        />
+                    </a>
+                    <!-- X (Twitter) -->
+                    <a
+                        href="https://x.com/mannwork47363"
+                        class="text-secondary hover:text-primary transition-colors"
+                        aria-label="X (Twitter)"
+                    >
+                        <img
+                            src="/src/assets/socials-media/x.svg"
+                            alt="X (Twitter)"
+                            class="h-8 w-8"
+                        />
+                    </a>
+                    <!-- TikTok -->
+                    <a
+                        href="https://www.tiktok.com/@mannwork"
+                        class="text-secondary hover:text-primary transition-colors"
+                        aria-label="TikTok"
+                    >
+                        <img
+                            src="/src/assets/socials-media/tiktok.svg"
+                            alt="TikTok"
+                            class="h-8 w-8"
+                        />
+                    </a>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="col-span-full border-t border-secondary"></div>
+
+            <!-- Copyright -->
+            <div class="col-span-full text-center">
+                <p class="text-secondary text-sm font-medium tracking-wide">
+                    &copy; 2025 Mannwork. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Volver arriba -->
+    <script>
+        const backToTopButton = document.getElementById("back-to-top");
+        if (backToTopButton) {
+            window.addEventListener("scroll", () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                    backToTopButton.classList.add("opacity-100", "visible");
+                } else {
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                }
+            });
+            backToTopButton.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
+    </script>
+</footer>

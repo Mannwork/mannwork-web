@@ -1,12 +1,13 @@
 ---
-import Hero from "@components/Hero.astro";
+import Hero from "@components/landing/Hero.astro";
 
 import Layout from "../layouts/Layout.astro";
-import Categories from "@components/Categories.astro";
-import DownloadApp from "@components/DownloadApp.astro";
-import UseTo from "@components/UseTo.astro";
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Categories from "@components/landing/Categories.astro";
+import DownloadApp from "@components/landing/DownloadApp.astro";
+import UseTo from "@components/landing/UseTo.astro";
+import Benefits from "@components/landing/Benefits.astro";
+import Premium from "@components/landing/Premium.astro";
+import CallToAction from "@components/landing/CallToAction.astro";
 ---
 
 <Layout title="Home">
@@ -14,4 +15,7 @@ import UseTo from "@components/UseTo.astro";
     <DownloadApp />
     <Categories />
     <UseTo />
+    <Benefits />
+    <Premium />
+    <CallToAction />
 </Layout>
