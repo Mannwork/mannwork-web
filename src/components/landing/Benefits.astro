@@ -1,0 +1,265 @@
+---
+import "material-icons/iconfont/material-icons.css";
+---
+
+<section class="pt-6 xl:pt-0 pb-16 max-w-[1440px] mx-auto overflow-hidden">
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+
+        li:hover {
+            transform: translateX(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    <div class="container mx-auto px-4">
+        <h2
+            class="text-3xl md:text-4xl font-bold text-center mb-12 text-secondary animate-fadeIn"
+            style="opacity: 0;"
+        >
+            Beneficios de Mannwork
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Para Clientes -->
+            <div
+                class="bg-primary p-8 rounded-xl border border-secondary shadow-lg card-hover animate-fadeInUp"
+                style="opacity: 0;"
+            >
+                <div class="flex items-center mb-6">
+                    <div class="p-3 bg-secondary rounded-lg mr-4">
+                        <span class="material-icons text-primary">groups</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-secondary">
+                        Para Clientes
+                    </h3>
+                </div>
+
+                <ul class="space-y-4">
+                    <li
+                        class="flex items-start opacity-0 animate-fadeIn"
+                        style="--delay: 2; animation-delay: calc(0.1s * var(--delay));"
+                    >
+                        <span class="material-icons text-secondary mr-2"
+                            >check_circle</span
+                        >
+                        <span class="text-secondary"
+                            >Totalmente <span class="font-semibold"
+                                >GRATIS!</span
+                            ></span
+                        >
+                    </li>
+                    <li
+                        class="flex items-start opacity-0 animate-fadeIn"
+                        style="--delay: 3; animation-delay: calc(0.1s * var(--delay));"
+                    >
+                        <span class="material-icons text-secondary mr-2"
+                            >check_circle</span
+                        >
+                        <span class="text-secondary"
+                            ><span class="font-semibold"
+                                >Solicitudes ilimitadas</span
+                            > a profesionales</span
+                        >
+                    </li>
+                    <li
+                        class="flex items-start opacity-0 animate-fadeIn"
+                        style="--delay: 4; animation-delay: calc(0.1s * var(--delay));"
+                    >
+                        <span class="material-icons text-secondary mr-2"
+                            >check_circle</span
+                        >
+                        <span class="text-secondary"
+                            ><span class="font-semibold">Chat en vivo</span> con
+                            hasta 4 profesionales en simultáneo</span
+                        >
+                    </li>
+                    <li
+                        class="flex items-start opacity-0 animate-fadeIn"
+                        style="--delay: 5; animation-delay: calc(0.1s * var(--delay));"
+                    >
+                        <span class="material-icons text-secondary mr-2"
+                            >check_circle</span
+                        >
+                        <span class="text-secondary"
+                            >Elegi el presupuesto <span class="font-semibold"
+                                >que mas te convenga</span
+                            ></span
+                        >
+                    </li>
+                    <li
+                        class="flex items-start opacity-0 animate-fadeIn"
+                        style="--delay: 6; animation-delay: calc(0.1s * var(--delay));"
+                    >
+                        <span class="material-icons text-secondary mr-2"
+                            >check_circle</span
+                        >
+                        <span class="text-secondary"
+                            ><span class="font-semibold"
+                                >Notificaciones en tiempo real</span
+                            > de tus solicitudes</span
+                        >
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Para Profesionales -->
+            <div
+                class="bg-primary p-8 rounded-xl border border-secondary shadow-lg card-hover animate-fadeInUp"
+                style="opacity: 0; animation-delay: 0.2s;"
+            >
+                <div class="flex items-center mb-6">
+                    <div class="p-3 bg-secondary rounded-lg mr-4">
+                        <span class="material-icons text-primary"
+                            >business_center</span
+                        >
+                    </div>
+                    <h3 class="text-2xl font-semibold text-secondary">
+                        Para Profesionales
+                    </h3>
+                </div>
+
+                <ul class="space-y-4">
+                    <li
+                        class="flex items-start opacity-0 animate-fadeIn"
+                        style="--delay: 2; animation-delay: calc(0.1s * var(--delay));"
+                    >
+                        <span class="material-icons text-secondary mr-2"
+                            >check_circle</span
+                        >
+                        <span class="text-secondary"
+                            ><span class="font-semibold text-secondary"
+                                >Hasta 3 trabajos simultáneos</span
+                            > que puedes aceptar</span
+                        >
+                    </li>
+                    <li
+                        class="flex items-start opacity-0 animate-fadeIn"
+                        style="animation-delay: calc(0.1s * var(--delay));"
+                    >
+                        <span class="material-icons text-secondary mr-2"
+                            >check_circle</span
+                        >
+                        <span class="text-secondary"
+                            >Envío de <span class="font-semibold"
+                                >solicitudes a otros profesionales</span
+                            ></span
+                        >
+                    </li>
+                    <li
+                        class="flex items-start opacity-0 animate-fadeIn"
+                        style="animation-delay: calc(0.1s * var(--delay));"
+                    >
+                        <span class="material-icons text-secondary mr-2"
+                            >check_circle</span
+                        >
+                        <span class="text-secondary"
+                            ><span class="font-semibold text-secondary"
+                                >Perfil personalizado</span
+                            > con reseñas y descripción</span
+                        >
+                    </li>
+                    <li
+                        class="flex items-start opacity-0 animate-fadeIn"
+                        style="animation-delay: calc(0.1s * var(--delay));"
+                    >
+                        <span class="material-icons text-secondary mr-2"
+                            >check_circle</span
+                        >
+                        <span class="text-secondary"
+                            >Ubicación visible para <span class="font-semibold"
+                                >clientes cercanos</span
+                            ></span
+                        >
+                    </li>
+                    <li
+                        class="flex items-start opacity-0 animate-fadeIn"
+                        style="animation-delay: calc(0.1s * var(--delay));"
+                    >
+                        <span class="material-icons text-secondary mr-2"
+                            >check_circle</span
+                        >
+                        <span class="text-secondary"
+                            ><span class="font-semibold text-secondary"
+                                >Notificaciones instantáneas</span
+                            > de nuevas oportunidades</span
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <p
+                class="text-lg text-secondary font-bold mb-6 opacity-0 animate-fadeIn"
+                style="animation-delay: 0.4s;"
+            >
+                ¡Únete a nuestra comunidad y descubre cómo podemos ayudarte a
+                encontrar el profesional perfecto o hacer crecer tu negocio!
+            </p>
+        </div>
+    </div>
+</section>

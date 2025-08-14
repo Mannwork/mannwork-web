@@ -1,0 +1,217 @@
+---
+import "material-icons/iconfont/material-icons.css";
+---
+
+<section
+    class="py-6 md:py-16 bg-secondary max-w-[1440px] mx-auto 2xl:rounded-xl overflow-hidden"
+>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        li {
+            transition: all 0.2s ease;
+        }
+        li:hover {
+            transform: translateX(8px);
+        }
+    </style>
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16 animate-fadeInUp" style="opacity: 0;">
+            <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+                Plan <span
+                    class="bg-gradient-to-r from-yellow-400 to-amber-500 text-transparent bg-clip-text"
+                    >Premium</span
+                > para Profesionales
+            </h2>
+            <p class="text-xl text-primary max-w-3xl mx-auto">
+                Potencia tu negocio y destácate de la competencia con beneficios
+                exclusivos
+            </p>
+        </div>
+
+        <div
+            class="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden mb-16 card-hover animate-fadeInUp"
+            style="opacity: 0; animation-delay: 0.1s;"
+        >
+            <div class="md:flex">
+                <div
+                    class="md:w-1/3 bg-gradient-to-br from-primary to-secondary p-8 text-white flex flex-col items-center justify-center"
+                >
+                    <div class="text-center">
+                        <p class="text-2xl font-semibold mb-2">Premium</p>
+                        <p class="text-5xl font-bold mb-4">
+                            $10USD<span class="text-xl">/mes</span>
+                        </p>
+                        <p class="text-secondary mb-6">Facturación mensual</p>
+                    </div>
+                </div>
+
+                <div class="md:w-2/3 p-8 bg-secondary">
+                    <h3 class="text-2xl font-bold text-primary mb-6">
+                        Beneficios Premium
+                    </h3>
+                    <ul class="space-y-4">
+                        <li
+                            class="flex items-start opacity-0 animate-fadeIn"
+                            style="--delay: 2; animation-delay: calc(0.1s * var(--delay));"
+                        >
+                            <span
+                                class="material-icons text-primary mr-3 mt-0.5"
+                                >insights</span
+                            >
+                            <div>
+                                <h4 class="font-semibold text-gray-800">
+                                    Métricas detalladas
+                                </h4>
+                                <p class="text-gray-600 text-sm">
+                                    Accede a estadísticas avanzadas de tus
+                                    trabajos y rendimiento
+                                </p>
+                            </div>
+                        </li>
+
+                        <li
+                            class="flex items-start opacity-0 animate-fadeIn"
+                            style="--delay: 2; animation-delay: calc(0.1s * var(--delay));"
+                        >
+                            <span
+                                class="material-icons text-primary mr-3 mt-0.5"
+                                >all_inbox</span
+                            >
+                            <div>
+                                <h4 class="font-semibold text-gray-800">
+                                    Solicitudes ilimitadas
+                                </h4>
+                                <p class="text-gray-600 text-sm">
+                                    Recibe y responde a todas las solicitudes
+                                    que desees
+                                </p>
+                            </div>
+                        </li>
+
+                        <li
+                            class="flex items-start opacity-0 animate-fadeIn"
+                            style="--delay: 2; animation-delay: calc(0.1s * var(--delay));"
+                        >
+                            <span
+                                class="material-icons text-primary mr-3 mt-0.5"
+                                >attach_file</span
+                            >
+                            <div>
+                                <h4 class="font-semibold text-gray-800">
+                                    Multimedia en el chat
+                                </h4>
+                                <p class="text-gray-600 text-sm">
+                                    Envía y recibe fotos, videos y archivos en
+                                    los chats
+                                </p>
+                            </div>
+                        </li>
+
+                        <li
+                            class="flex items-start opacity-0 animate-fadeIn"
+                            style="--delay: 2; animation-delay: calc(0.1s * var(--delay));"
+                        >
+                            <span
+                                class="material-icons text-primary mr-3 mt-0.5"
+                                >savings</span
+                            >
+                            <div>
+                                <h4 class="font-semibold text-gray-800">
+                                    Comisión reducida
+                                </h4>
+                                <p class="text-gray-600 text-sm">
+                                    Solo 1% de comisión en lugar del 5% estándar
+                                </p>
+                            </div>
+                        </li>
+
+                        <li
+                            class="flex items-start opacity-0 animate-fadeIn"
+                            style="--delay: 2; animation-delay: calc(0.1s * var(--delay));"
+                        >
+                            <span
+                                class="material-icons text-primary mr-3 mt-0.5"
+                                >trending_up</span
+                            >
+                            <div>
+                                <h4 class="font-semibold text-gray-800">
+                                    Prioridad en búsquedas
+                                </h4>
+                                <p class="text-gray-600 text-sm">
+                                    Aparece primero en los resultados de
+                                    búsqueda
+                                </p>
+                            </div>
+                        </li>
+
+                        <!-- Feature 6 -->
+                        <li
+                            class="flex items-start opacity-0 animate-fadeIn"
+                            style="--delay: 2; animation-delay: calc(0.1s * var(--delay));"
+                        >
+                            <span
+                                class="material-icons text-primary mr-3 mt-0.5"
+                                >verified</span
+                            >
+                            <div>
+                                <h4 class="font-semibold text-gray-800">
+                                    Insignia Premium
+                                </h4>
+                                <p class="text-gray-600 text-sm">
+                                    Destácate con la insignia Premium en tu
+                                    perfil
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="text-center max-w-3xl mx-auto opacity-0 animate-fadeIn" style="animation-delay: 0.3s;">
+            <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-8">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <span class="material-icons text-amber-500">info</span>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-amber-700">
+                            <span class="font-semibold"
+                                >¡Prueba Premium gratis por 7 días!</span
+                            > Cancela en cualquier momento.
+                        </p>
+                    </div> -->
+    </div>
+</section>
