@@ -1,3 +1,11 @@
+---
+import logoBlanco from "../../assets/logo_blanco.png";
+import facebook from "../../assets/socials-media/facebook.svg";
+import instagram from "../../assets/socials-media/instagram.svg";
+import tiktok from "../../assets/socials-media/tiktok.svg";
+import x from "../../assets/socials-media/x.svg";
+---
+
 <footer class="max-w-[1440px] mx-auto text-white pb-6 relative">
     <!-- Botón Volver arriba -->
     <button
@@ -15,7 +23,7 @@
             <div class="pt-12 flex flex-col">
                 <div class="mb-4 -mt-12">
                     <img
-                        src="/src/assets/logo_blanco.png"
+                        src={logoBlanco.src}
                         alt="Logo"
                         class="w-32 h-32"
                     />
@@ -81,7 +89,7 @@
             <!-- Redes sociales (ahora a la derecha) -->
             <div class="pt-12 col-span-1 md:col-span-2 lg:col-span-1">
                 <div
-                    class="flex justify-center w-full justify-center lg:justify-end space-x-4"
+                    class="flex w-full justify-center lg:justify-end space-x-4"
                 >
                     <!-- Facebook -->
                     <a
@@ -90,7 +98,7 @@
                         aria-label="Facebook"
                     >
                         <img
-                            src="/src/assets/socials-media/facebook.svg"
+                            src={facebook.src}
                             alt="Facebook"
                             class="h-8 w-8"
                         />
@@ -102,7 +110,7 @@
                         aria-label="Instagram"
                     >
                         <img
-                            src="/src/assets/socials-media/instagram.svg"
+                            src={instagram.src}
                             alt="Instagram"
                             class="h-8 w-8"
                         />
@@ -113,11 +121,7 @@
                         class="text-secondary hover:text-primary transition-colors"
                         aria-label="X (Twitter)"
                     >
-                        <img
-                            src="/src/assets/socials-media/x.svg"
-                            alt="X (Twitter)"
-                            class="h-8 w-8"
-                        />
+                        <img src={x.src} alt="X (Twitter)" class="h-8 w-8" />
                     </a>
                     <!-- TikTok -->
                     <a
@@ -126,7 +130,7 @@
                         aria-label="TikTok"
                     >
                         <img
-                            src="/src/assets/socials-media/tiktok.svg"
+                            src={tiktok.src}
                             alt="TikTok"
                             class="h-8 w-8"
                         />

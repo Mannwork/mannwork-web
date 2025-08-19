@@ -1,3 +1,8 @@
+---
+import appStore from "../../assets/app-store.svg";
+import playStore from "../../assets/play-store.svg";
+---
+
 <section class="py-6 md:py-16 max-w-[1440px] mx-auto">
     <div class="container mx-auto px-4 max-w-6xl">
         <div class="text-center" data-aos="fade-up">
@@ -21,7 +26,7 @@
                 >
                     <div class="relative group">
                         <img
-                            src="/src/assets/app-store.svg"
+                            src={appStore.src}
                             alt="Descargar en App Store"
                             class="w-full h-auto transition-all duration-500 group-hover:scale-100"
                             loading="lazy"
@@ -41,7 +46,7 @@
                 >
                     <div class="relative group">
                         <img
-                            src="/src/assets/play-store.svg"
+                            src={playStore.src}
                             alt="Disponible en Google Play"
                             class="w-full h-auto transition-all duration-500 group-hover:scale-100"
                             loading="lazy"
