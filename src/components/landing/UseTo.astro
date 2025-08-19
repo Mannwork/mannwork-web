@@ -1,34 +1,40 @@
 ---
+import califica from "../../assets/features/califica.jpg";
+import chatea from "../../assets/features/chatea.jpg";
+import encontra from "../../assets/features/encontra.jpg";
+import paga from "../../assets/features/paga.jpg";
+import solicita from "../../assets/features/solicita.jpg";
+
 const appFeatures = [
     {
         title: "Encontrar Profesionales",
         description:
             "Descubre profesionales calificados cerca de ti con solo unos toques.",
-        image: "src/assets/features/encontra.jpg",
+        image: encontra,
     },
     {
         title: "Solicitar Servicios",
         description:
             "Pide servicios de manera rápida y fácil con nuestro formulario intuitivo.",
-        image: "src/assets/features/solicita.jpg",
+        image: solicita,
     },
     {
         title: "Chatea con tus profesionales",
         description:
             "Comunícate con tus profesionales asignados en tiempo real.",
-        image: "src/assets/features/chatea.jpg",
+        image: chatea,
     },
     {
         title: "Pago Seguro",
         description:
             "Paga de forma segura con múltiples métodos de pago disponibles.",
-        image: "src/assets/features/paga.jpg",
+        image: paga,
     },
     {
         title: "Califica el Servicio",
         description:
             "Ayuda a mejorar la comunidad calificando a los profesionales.",
-        image: "src/assets/features/califica.jpg",
+        image: califica,
     },
 ];
 ---
@@ -63,7 +69,7 @@ const appFeatures = [
                             {" "}
                             <div class="w-full h-full bg-gray-100 rounded-[32px] overflow-hidden">
                                 <img
-                                    src={feature.image}
+                                    src={feature.image.src}
                                     alt={feature.title}
                                     class="w-full h-full"
                                 />
