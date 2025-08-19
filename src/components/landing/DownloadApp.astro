@@ -1,8 +1,9 @@
 ---
-// Importar imágenes (asegúrate de tener estas imágenes en tu carpeta public)
-const appScreenshot = "/images/app-screenshot.png";
-const appStoreBadge = "/images/app-store-badge.svg";
-const playStoreBadge = "/images/play-store-badge.svg";
+import appStore from "../../assets/app-store.svg";
+import person1 from "../../assets/person-1.svg";
+import person2 from "../../assets/person-2.svg";
+import person3 from "../../assets/person-3.svg";
+import playStore from "../../assets/play-store.svg";
 ---
 
 <section
@@ -25,7 +26,7 @@ const playStoreBadge = "/images/play-store-badge.svg";
                         data-aos-duration="600"
                     >
                         <img
-                            src="src/assets/person-1.svg"
+                            src={person1.src}
                             alt="Usuario 1"
                             class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                         />
@@ -37,7 +38,7 @@ const playStoreBadge = "/images/play-store-badge.svg";
                         data-aos-duration="600"
                     >
                         <img
-                            src="src/assets/person-2.svg"
+                            src={person2.src}
                             alt="Usuario 2"
                             class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                         />
@@ -49,7 +50,7 @@ const playStoreBadge = "/images/play-store-badge.svg";
                         data-aos-duration="600"
                     >
                         <img
-                            src="src/assets/person-3.svg"
+                            src={person3.src}
                             alt="Usuario 3"
                             class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                         />
@@ -80,7 +81,7 @@ const playStoreBadge = "/images/play-store-badge.svg";
                     >
                         <div class="relative group">
                             <img
-                                src="src/assets/app-store.svg"
+                                src={appStore.src}
                                 alt="Descargar en App Store"
                                 class="md:min-w-[250px] md:min-h-[100px] min-w-[200px] min-h-[80px] w-auto transition-all duration-500 group-hover:scale-100"
                             />
@@ -99,7 +100,7 @@ const playStoreBadge = "/images/play-store-badge.svg";
                     >
                         <div class="relative group">
                             <img
-                                src="src/assets/play-store.svg"
+                                src={playStore.src}
                                 alt="Disponible en Google Play"
                                 class="min-h-[200px] min-w-[200px] w-auto transition-all duration-500 group-hover:scale-100"
                             />
