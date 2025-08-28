@@ -86,10 +86,18 @@
   
         <!-- Botón de envío -->
         <button
-          type="submit"
-          class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+          type="button"
+          id="submitButton"
+          class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Enviar Solicitud de Eliminación
+          <span id="buttonText">Enviar Solicitud de Eliminación</span>
+          <span id="loadingSpinner" class="hidden">
+            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Enviando...
+          </span>
         </button>
       </form>
   
@@ -123,7 +131,6 @@
 
   <script>
     import { supabase } from "@lib/supabase";
-
     interface FormElements {
       form: HTMLFormElement;
       reasonTextarea: HTMLTextAreaElement;
@@ -131,6 +138,9 @@
       successMessage: HTMLDivElement;
       errorMessage: HTMLDivElement;
       errorText: HTMLParagraphElement;
+      submitButton: HTMLButtonElement;
+      buttonText: HTMLSpanElement;
+      loadingSpinner: HTMLSpanElement;
     }
 
     interface ValidationResult {
@@ -155,8 +165,11 @@
         const successMessage = document.getElementById('successMessage') as HTMLDivElement;
         const errorMessage = document.getElementById('errorMessage') as HTMLDivElement;
         const errorText = document.getElementById('errorText') as HTMLParagraphElement;
+        const submitButton = document.getElementById('submitButton') as HTMLButtonElement;
+        const buttonText = document.getElementById('buttonText') as HTMLSpanElement;
+        const loadingSpinner = document.getElementById('loadingSpinner') as HTMLSpanElement;
 
-        if (!form || !reasonTextarea || !charCount || !successMessage || !errorMessage || !errorText) {
+        if (!form || !reasonTextarea || !charCount || !successMessage || !errorMessage || !errorText || !submitButton || !buttonText || !loadingSpinner) {
           throw new Error('Required form elements not found');
         }
 
@@ -166,13 +179,23 @@
           charCount,
           successMessage,
           errorMessage,
-          errorText
+          errorText,
+          submitButton,
+          buttonText,
+          loadingSpinner
         };
       }
 
       private setupEventListeners(): void {
         this.elements.reasonTextarea.addEventListener('input', this.handleCharacterCount.bind(this));
-        this.elements.form.addEventListener('submit', this.handleFormSubmit.bind(this));
+        this.elements.submitButton.addEventListener('click', this.handleFormSubmit.bind(this));
+        
+        // Prevenir envío del formulario por métodos tradicionales
+        this.elements.form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
       }
 
       private handleCharacterCount(): void {
@@ -220,9 +243,7 @@
         return emailRegex.test(email);
       }
 
-      private async handleFormSubmit(e: Event): Promise<void> {
-        e.preventDefault();
-        
+      private async handleFormSubmit(): Promise<void> {
         const formData = new FormData(this.elements.form);
         const email = formData.get('email') as string;
         const reason = formData.get('reason') as string;
@@ -236,11 +257,14 @@
         }
 
         try {
+          this.setLoadingState(true);
           await this.submitToSupabase(email, reason);
           this.handleSuccess();
         } catch (error) {
           console.error('Error submitting form:', error);
           this.showError('Error al enviar la solicitud. Por favor, intenta nuevamente.');
+        } finally {
+          this.setLoadingState(false);
         }
       }
 
@@ -284,6 +308,12 @@
       private hideMessages(): void {
         this.elements.successMessage.classList.add('hidden');
         this.elements.errorMessage.classList.add('hidden');
+      }
+
+      private setLoadingState(isLoading: boolean): void {
+        this.elements.submitButton.disabled = isLoading;
+        this.elements.buttonText.classList.toggle('hidden', isLoading);
+        this.elements.loadingSpinner.classList.toggle('hidden', !isLoading);
       }
     }
 
